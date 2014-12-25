@@ -92,19 +92,11 @@ function checkResult() {
         wrongAnswer++;
         document.getElementById("check").innerHTML = 'Ошибка';
     }
-    resetAll();
-    getAnswerResult();
-}
-
-/**
- * 
- * @returns {undefined}
- */
-function resetAll() {
+    
     job = false;
     result = null;
     stringResult = null;
-    
+    getAnswerResult();
 }
 
 /**
