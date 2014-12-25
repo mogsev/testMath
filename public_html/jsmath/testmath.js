@@ -147,7 +147,7 @@ function getJob() {
             alert("Введите ответ и проверте результат");
         } else {
             document.getElementById("userResult").value = null;
-            //document.getElementById("check").innerHTML = null;
+            document.getElementById("check").innerHTML = null;
             getRandomTask();
         }
     }
@@ -184,7 +184,7 @@ function getAdd() {
         stringResult += oneNum + " + " + twoNum;
     }    
     document.getElementById("job").innerHTML = stringResult;
-    document.getElementById("check").innerHTML = result;
+    //document.getElementById("check").innerHTML = result;
     job = true;
 }
 
@@ -201,7 +201,7 @@ function getSub() {
         stringResult += oneNum + " - " + twoNum;
     }    
     document.getElementById("job").innerHTML = stringResult;
-    document.getElementById("check").innerHTML = result;
+    //document.getElementById("check").innerHTML = result;
     job = true;
 }
 
@@ -218,7 +218,7 @@ function getMulti() {
         stringResult += oneNum + " * " + twoNum;
     }    
     document.getElementById("job").innerHTML = stringResult;
-    document.getElementById("check").innerHTML = result;
+    //document.getElementById("check").innerHTML = result;
     job = true;
 }
 
@@ -235,7 +235,7 @@ function getDivision() {
         stringResult += oneNum + " / " + twoNum;
     }    
     document.getElementById("job").innerHTML = stringResult;
-    document.getElementById("check").innerHTML = result;
+    //document.getElementById("check").innerHTML = result;
     job = true;
 }
 
