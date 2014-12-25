@@ -105,12 +105,24 @@ function checkResult() {
  */
 function checkValue() {        
     var value = parseInt(document.getElementById("userResult").value);    
-    if (isNaN(value) || !(value >= 0)) {
+    if (isNaN(value) || !isNum(value)) {
         alert("Вводите только положительные натуральные числа");        
     } else {
         document.getElementById("check").innerHTML = value;
         checkResult();
     }
+}
+
+/**
+ * 
+ * @param {type} num
+ * @returns {Boolean}
+ */
+function isNum(num) {
+    if (num >=0 || num < 0) {
+        return true;
+    } 
+    return false;
 }
 
 /**
