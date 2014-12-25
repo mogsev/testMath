@@ -104,8 +104,8 @@ function checkResult() {
  * @returns {undefined}
  */
 function checkValue() {        
-    var value = parseInt(document.getElementById("userResult").value);
-    if (isNaN(value) || value < 0) {
+    var value = parseInt(document.getElementById("userResult").value);    
+    if (isNaN(value) || !(value >= 0)) {
         alert("Вводите только положительные натуральные числа");        
     } else {
         document.getElementById("check").innerHTML = value;
