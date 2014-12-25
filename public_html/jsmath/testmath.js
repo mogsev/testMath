@@ -14,132 +14,67 @@ var userResult;
 var result;
 var stringResult;
 
+/**
+ * 
+ * @returns {undefined}
+ */
 function setAdd() {    
-    if (add == 0) {
+    if (add === 0) {
         add = 1;
     } else { 
         add = 0;
     }
 }
 
+/**
+ * 
+ * @returns {undefined}
+ */
 function setSub() {
-    if (sub == 0) {
+    if (sub === 0) {
         sub = 2;
     } else {
         sub = 0;
     }
 }
 
+/**
+ * 
+ * @returns {undefined}
+ */
 function setMulti() {
-    if (multi == 0) {
+    if (multi === 0) {
         multi = 3;
     } else {
         multi = 0;
     }
 }
 
+/**
+ * 
+ * @returns {undefined}
+ */
 function setDivision() {
-    if (division == 0) {
+    if (division === 0) {
         division = 4;
     } else {
         division = 0;
     }
 }
 
+/**
+ * 
+ * @returns {undefined}
+ */
 function getAnswerResult() {
     document.getElementById("correctAnswer").innerHTML = 'Правильных ответов - ' + correctAnswer;
     document.getElementById("wrongAnswer").innerHTML = 'Ошибок - ' + wrongAnswer;    
 }
 
-/*
-function getJobExt() {
-    if (job) {
-        alert("Введите ответ и проверте результат");
-    } else {
-        document.getElementById("userResult").value = null;
-        document.getElementById("check").innerHTML = null;
-        getTest();
-    }
-}
-
-/*
-function getTest() {    
-    if ((!add&&!sub&&!multi&&!division)) {  
-        alert("Выбирите одно из действий в установках!");
-    } else {        
-        var oneNum = getRandomNumber(10);
-        var twoNum = getRandomNumber(10);
-        var threeNum = getRandomNumber(10);
-        var fourNum = getRandomNumber(10);
-        var fiveNum = getRandomNumber(10);
-        stringResult = "Задание: ";
-        if (add) { 
-            if (isNaN(result) || result == null) {                
-                result = oneNum + twoNum;
-                stringResult += oneNum + " + " + twoNum;
-            } else {
-                result += twoNum;
-                stringResult += " + " + twoNum;
-            }
-        }
-        if (sub) {
-            if (isNaN(result) || result == null) {
-                if ((result - threeNum) < 0) {
-                    
-                } else {
-                    result = oneNum - threeNum;
-                    stringResult += oneNum + " - " + threeNum;
-                }
-            } else {
-                result -= threeNum;
-                stringResult += " - " + threeNum;
-            }
-        }
-        
-        if (multi) {
-            if (isNaN(result) ||result == null) {
-                result = oneNum * fourNum;
-                stringResult += oneNum + " * " + fourNum;
-            } else {
-                result *= fourNum;
-                stringResult += " * " + fourNum; 
-            }
-        }
-        if (division) {
-            if (isNaN(result) || result == null) {
-                result = oneNum / fiveNum;
-                stringResult += oneNum + " / " + fiveNum;
-            } else {
-                result *= fiveNum;
-                stringResult += " / " + fiveNum;
-            }
-        }
-        document.getElementById("job").innerHTML = stringResult;
-        
-        document.getElementById("check").innerHTML = result;
-        
-        job = true;
-    }
-}*/
-
 /**
-function getTestTest() {
-    var x = getRandomNumber(4);
-    var a = [0, 2, 3];
-    /**
-    switch (x) {
-        case 0: document.getElementById("check").innerHTML = x;
-            break;
-        case 1: document.getElementById("check").innerHTML = x;
-            break;
-        case 3: document.getElementById("check").innerHTML = x;
-            break;
-        case 4: document.getElementById("check").innerHTML = x;
-            break;
-    }
-    document.getElementById("check").innerHTML = isRandom(a);
-} */
-
+ * 
+ * @returns {undefined}
+ */
 function checkJob() {
     if (job) {
         checkValue();
@@ -150,7 +85,7 @@ function checkJob() {
 
 function checkResult() {
     var value = parseInt(document.getElementById("userResult").value);
-    if (value == result) {
+    if (value === result) {
         correctAnswer++;
         document.getElementById("check").innerHTML = 'Правильный ответ';
     } else {
@@ -161,6 +96,10 @@ function checkResult() {
     getAnswerResult();
 }
 
+/**
+ * 
+ * @returns {undefined}
+ */
 function resetAll() {
     job = false;
     result = null;
@@ -168,6 +107,10 @@ function resetAll() {
     
 }
 
+/**
+ * 
+ * @returns {undefined}
+ */
 function checkValue() {        
     var value = parseInt(document.getElementById("userResult").value);
     if (isNaN(value) || value < 0) {
@@ -178,10 +121,20 @@ function checkValue() {
     }
 }
 
+/**
+ * This metod generate random number
+ * @param {type} x
+ * @returns {Number}
+ */
 function getRandomNumber(x) {     
     return Math.round(Math.random()*x);
 }
 
+/**
+ * 
+ * @param {type} x
+ * @returns {unresolved}
+ */
 function getTask(x) {
     if (add === x) return x;
     if (sub === x) return x;
@@ -190,6 +143,10 @@ function getTask(x) {
     return getTask(getRandomNumber(4));
 }
 
+/**
+ * 
+ * @returns {undefined}
+ */
 function getJob() {
      if (((add === 0) && (sub === 0) && (multi === 0) && (division === 0))) {  
         alert("Выбирите одно из действий в установках!");
@@ -198,7 +155,7 @@ function getJob() {
             alert("Введите ответ и проверте результат");
         } else {
             document.getElementById("userResult").value = null;
-            document.getElementById("check").innerHTML = null;
+            //document.getElementById("check").innerHTML = null;
             getRandomTask();
         }
     }
@@ -230,7 +187,7 @@ function getAdd() {
     var oneNum = getRandomNumber(10);
     var twoNum = getRandomNumber(10);        
     stringResult = "Задание: ";         
-    if (isNaN(result) || result === null) {                
+    if (isNaN(result) || result == null) {                
         result = oneNum + twoNum;
         stringResult += oneNum + " + " + twoNum;
     }    
